@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>HPC - Persson Group Handbook</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="../../css/code-tabs.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Persson Group Handbook</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../about/about/">General</a>
+</li>
+                                    
+<li >
+    <a href="../../about/group_policies/">Group Policies</a>
+</li>
+                                    
+<li >
+    <a href="../../about/group_jobs/">Group Jobs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../getting_started/newcomers/">Newcomers</a>
+</li>
+                                    
+<li >
+    <a href="../../getting_started/new_computer/">Purchasing a Computer</a>
+</li>
+                                    
+<li >
+    <a href="../../getting_started/purchasing/">Purchasing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Computing <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../computing/">General Info</a>
+</li>
+                                    
+<li >
+    <a href="../software/">Software</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">HPC</a>
+</li>
+                                    
+<li >
+    <a href="../atomate/">Atomate Setup</a>
+</li>
+                                    
+<li >
+    <a href="../calculation_software/">Calculation Software</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../students/residency/">Establishing Residency</a>
+</li>
+                                    
+<li >
+    <a href="../../students/prelims/">Preparing for Prelims</a>
+</li>
+                                    
+<li >
+    <a href="../../students/qualifying/">Qualifying Exams</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../postdocs/">Post-Docs</a>
+                            </li>
+                            <li >
+                                <a href="../../acknowlegements/">Acknowlegements</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../software/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../atomate/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#computing-resources">Computing Resources </a></li>
+            <li><a href="#nersc">NERSC </a></li>
+            <li><a href="#berkeley-research-computing">Berkeley Research Computing </a></li>
+            <li><a href="#peregrine">Peregrine </a></li>
+            <li><a href="#additional-resources">Additional resources:</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="computing-resources">Computing Resources <a name="computing"></a></h2>
+<p>Our group’s main computing resources are:
+* <a href="#nersc">NERSC</a> (the LBNL supercomputing center, one of the biggest in the world)
+* Lawrencium / Berkeley Research Computing
+* Peregrine (the NREL supercomputing center)
+* Argonne Leadership Computing Facility (sometimes)
+* Oak Ridge Leadership Computing Facility (sometimes)</p>
+<p>At any time, if you feel you are computing-limited, please contact Kristin so she can work with you on finding solutions.</p>
+<h3 id="nersc">NERSC <a name="nersc"></a></h3>
+<h4 id="to-get-started-with-calculations-at-nersc">To get started with calculations at NERSC: <a name="startnersc"></a></h4>
+<ol>
+<li>Ask Kristin about whether you will be running at NERSC and, if so, under what account / repository to charge.</li>
+<li>Request a NERSC account through the NERSC homepage (Google “NERSC account request”).</li>
+<li>A NERSC Liason or PI Proxy will validate your account and assign you an initial allocation of computing hours.</li>
+<li>At this point, you should be able to log in, check CPU-hour balances, etc. through “NERSC NIM” and “My NERSC” portals</li>
+<li>In order to log in and run jobs on the various machines at NERSC, review the NERSC documentation.</li>
+<li>In order to load and submit scripts for various codes (VASP, ABINIT, Quantum Espresso), NERSC has lots of information to help. Try Google, e.g. “NERSC VASP”.
+... *Note that for commercial codes such as VASP, there is an online form that allows you to enter your VASP license, which NERSC will confirm and then allow you access to.</li>
+<li>Please make a folder inside your project directory and submit all your jobs there, as your home folder has only about 40GB of space. For example, for matgen project, your work folder path should be something like the following:
+<code>/global/project/projectdirs/matgen/YOUR_NERSC_USERNAME</code></li>
+<li>You can also request a mongo database for your project to be hosted on NERSC. Google “MongoDB on NERSC” for instructions. Donny Winston or Patrick Huck can also help you get set up and provide you with a preconfigured database suited for running Materials Project style workflows.</li>
+</ol>
+<h4 id="running-jobs-on-nersc">Running Jobs on NERSC</h4>
+<p>This tutorial provides a brief overview of setting yourself up to run jobs on NERSC. If any information is unclear or missing, feel free to edit this document or contact Kara Fong.</p>
+<h5 id="setting-up-a-nersc-account">Setting up a NERSC account:</h5>
+<p>Contact the group’s NERSC Liaison (currently Eric Sivonxay, see Group Jobs list). They will help you create an account and allocate you computational resources. You will then receive an email with instructions to fill out the Appropriate Use Policy form, set up your password, etc.</p>
+<p>Once your account is set up, you can manage it at the NERSC Information Management (NIM) website.</p>
+<h5 id="connecting-with-ssh">Connecting with SSH:</h5>
+<p>You must use the SSH protocol to connect to NERSC.
+Make sure you have SSH installed on your local computer (you can check this by typing which ssh).
+Make sure you have a directory named $HOME/.ssh on your local computer (if not, make it).
+Run the command ssh-keygen -t rsa -b 4096. This will generate an RSA key, which you can view in the file id_rsa.pub
+You’ll be asked to enter a passphrase, which should be different from your password.</p>
+<p>You must store your SSH public key on the NERSC NIM database.
+Go to the NIM website, navigate to “My Stuff” -&gt; “My SSH Keys”. Click on the SSH Keys tab.
+Copy your key (from id_rsa.pub) into the website’s text box, click Add.</p>
+<h5 id="logging-on">Logging on:</h5>
+<p>Log on to Cori, for example, by submitting the following command in the terminal:</p>
+<p> <pre><code class>ssh username@cori.nersc.gov
+</code></pre></p>
+<p>You will be prompted to enter your passphrase. This will take you to your home directory. You may also find it useful to set up an alias for signing on to HPC resources. To do this, add the following line to your bash_profile:</p>
+<p> <pre><code class>alias cori=&quot;ssh your_username@cori.nersc.gov&quot;
+</code></pre></p>
+<p>Now you will be able to initialize a SSH connection to cori just by typing <code>cori</code> in the command line and pressing enter.</p>
+<h5 id="transferring-files-tofrom-nersc">Transferring files to/from NERSC:</h5>
+<p>For small files, you can use SCP (secure copy). To get a file from NERSC, use:</p>
+<p> <pre><code class>scp user_name@dtn01.nersc.gov:/remote/path/myfile.txt /local/path
+</code></pre></p>
+<p>To send a file to NERSC, use:</p>
+<p> <pre><code class>scp /local/path/myfile.txt user_name@dtn01.nersc.gov:/remote/path
+</code></pre></p>
+<p>To move a larger quantity of data using a friendlier interface, use Globus Online.</p>
+<h5 id="running-and-monitoring-jobs">Running and monitoring jobs:</h5>
+<p>The following instructions are for running on Cori. Analogous information for running on Edison can be found here.</p>
+<p>Most jobs are run in batch mode, in which you prepare a shell script telling the batch system how to run the job (number of nodes, time the job will run, etc.). NERSC’s batch system software is called SLURM. Below is a simple batch script example, copied from the NERSC website:</p>
+<p> <pre><code class>#!bin/bash -l
+
+#SBATCH -N 2          #Use 2 nodes
+#SBATCH -t 00:30:00   #Set 30 minute time limit
+#SBATCH -q regular    #Submit to the regular QOS
+#SBATCH -L scratch    #Job requires $SCRATCH file system
+#SBATCH -C haswell    #Use Haswell nodes
+
+srun -n 32 -c 4 ./my_executable
+</code></pre></p>
+<p>Here, the first line specifies which shell to use (in this case bash). The keyword #SBATCH is used to start directive lines (<a href="http://www.nersc.gov/users/computational-systems/cori/running-jobs/batch-jobs/#toc-anchor-3">click here</a> for a full description of the sbatch options you can specify). The word “srun” starts execution of the code.</p>
+<p>To submit your batch script, use <code>sbatch myscript.sl</code> in the directory containing the script file.</p>
+<p>Below are some useful commands to control and monitor your jobs:</p>
+<p> <pre><code class>sqs -u username     (Lists jobs for your account)
+scancel jobid   (Cancels a job from the queue)
+</code></pre></p>
+<h5 id="choosing-a-qos-quality-of-service">Choosing a QOS (quality of service):</h5>
+<p>You specify which queue to use in your batch file. Use the <strong>debug</strong> queue for small, short test runs, the <strong>regular</strong> queue for production runs, and the <strong>premium</strong> queue for high-priority jobs.</p>
+<h5 id="choosing-a-node-type-haswell-vs-knl">Choosing a node type (haswell vs knl):</h5>
+<p>You may also specify the resource type you would like your job to run on, witnin your batch file. When running on Cori, there are two CPU architectures available, Haswell, and Knights Landing (known as KNL). Running on a Haswell node will afford you high individual core performance with up to 32 cores per node (or 64 threads per node). A KNL node provides a large core count (68 cores per node or 272 threads per node) which is suitable for programs capable of effectively utilizing multithreading. On Cori, there are 2388 Haswell nodes and 9688 KNL nodes.</p>
+<p>[TODO: FILL OUT THIS SECTION MORE]</p>
+<h4 id="automatic-job-submission-on-nersc-crontab">Automatic job submission on NERSC: crontab <a name="crontab"></a></h4>
+<p>In order to automatically manage job submission at NERSC, you can use crontab. You can submit jobs periodically even when you are not signed in to any NERSC systems and perhaps reduce the queue time from 5-10 days to a few hours. This is possible because of the way jobs are managed in atomate/fireworks. Please make sure you feel comfortable submitting individual jobs via atomate before reading this section.</p>
+<p>In atomate, by using --maxloop 3 for example when setting rocket_launch in your my_qadapter.yaml, after 3 trials in each minute if there are still no READY jobs available in your Launchpad Fireworks would stop the running job on NERSC to avoid wasting computing resources. On the other hand, if you have Fireworks available with the READY state and you have been using crontab for a few days, even if the jobs you submitted a few days ago start running on NERSC, they would pull any READY Fireworks and start RUNNING them reducing the turnaround from a few days to a few hours! So how to setup crontab? Please follow the instructions here:
+1. ssh to the node where you want to setup the crontab; try one that is easy to remember such as cori01 or edison01; for logging in to a specific node just do for example “ssh cori01” after you log in to the system (Cori in this example).</p>
+<ol>
+<li>
+<p>Type and enter: <code>crontab -e</code></p>
+</li>
+<li>
+<p>Now you can setup the following command in the opened vi editor. What it does is basically running the SCRIPT.sh file every 120 minutes of every day of every week of every month of every year (or simply <em>/120 * </em> * *):</p>
+</li>
+</ol>
+<p> <pre><code class>*/120 * * * * /bin/bash -l PATH_TO_SCRIPT.sh &gt;&gt; PATH_TO_LOGFILE
+</code></pre></p>
+<ol>
+<li>Setup your SCRIPT.sh like the following: (as a suggestion, you can simply put this file and the log file which keeps a log of submission states in your home folder):</li>
+</ol>
+<p> <pre><code class>source activate YOUR_PRODUCTION_CONDA_ENVIRONMENT FW_CONFIG_FILE=PATH_TO_CONFIG_DIR/FW_config.yaml
+cd PATH_TO_YOUR_PRODUCTION_FOLDER
+qlaunch --fill_mode rapidfire -m 1000 --nlaunches 1
+</code></pre></p>
+<p>The last line of this 3-line file is really what submitting your job inside your production folder with the settings that you set in FW_config.yaml file. See <a href="https://atomate.org/#documentation-tutorials">atomate documentation</a> for more info.</p>
+<ol>
+<li>Please make sure to set your PRODUCTION_FOLDER under /global/project/projectdirs/ that has much more space than your home folder and it is also backed up. Make sure to keep an eye on how close you are to disk space and file number limitations by checking https://my.nersc.gov/ periodically.</li>
+</ol>
+<h4 id="running-jupyter-notebooks-on-cori">Running Jupyter Notebooks on Cori <a name="jupyter"></a></h4>
+<p>Jupyter notebooks are quickly becoming an indispensable tool for doing computational science. In some cases, you might want to (or need to) harness NERSC computing power inside of  a jupyter notebook. To do this, you can use NERSC’s new Jupyterhub system at https://jupyter-dev.nersc.gov/. These notebooks are run on a large memory node of Cori and can also submit jobs to the batch queues (see http://bit.ly/2A0mqrl for details). All of your files and the project directory will be accessible from the Jupyterhub, but your conda envs won’t be available before you do some configuration.</p>
+<p>To set up a conda environment so it is accessible from the Jupyterhub, activate the environment and setup an ipython kernel. To do this, run the command “pip install ipykernel”. More info can be found at http://bit.ly/2yoKAzB.</p>
+<h4 id="automatic-job-packing-with-fireworks">Automatic Job Packing with FireWorks <a name="packing"></a></h4>
+<p>DISCLAIMER:  Only use job packing if you have trouble with typical job submission. The following tip is not 100% guaranteed to work., and is based on limited, subjective experience on Cori. Talk to Alex Dunn (ardunn@lbl.gov) for help if you have trouble.</p>
+<p>The Cori queue system can be unreasonably slow when submitting many (e.g., hundreds, thousands) of small (e.g., single node or 2 nodes) jobs with qos-normal priority on Haswell. In practice, we have found that the Cori job scheduler will give your jobs low throughput if you have many jobs in queue, and you will often only be able to run 5-30 jobs at a time, while the rest wait in queue for far longer than originally expected (e.g., weeks). While there is no easy way to increase your queue submission rate (AFAIK), you can use FireWorks job-packing to “trick” Cori’s SLURM scheduler into running many jobs in serial on many parallel compute nodes with a single queue submission, vastly increasing throughput.</p>
+<p>You can use job packing with the “multi” option to rlaunch. This command launches N parallel python processes on the Cori scheduling node, each which runs a job using M compute nodes.</p>
+<p>The steps to job packing are:
+1. Edit your my_qadapter.yaml file to reserve N * M nodes for each submission. For example, if each of your jobs takes M = 2 nodes, and you want a N = 10 x speedup, reserve 20 nodes per queue submission.
+2. Change your rlaunch command to:</p>
+<p> <pre><code class>rlaunch -c /your/config multi N
+</code></pre></p>
+<p>To have each FireWorks process run as many jobs as possible in serial before the walltime, use the --nlaunches 0 option. To prevent FireWorks from submitting jobs with little walltime left (causing jobs to frequently get stuck as “RUNNING”), set the --timeout option. Make sure --timeout is set so that even a long running job submitted at the end of your allocation will not run over your walltime limit. Your my_qadapter.yaml should then have something similar to the following lines:</p>
+<p> <pre><code class>rocket_launch: rlaunch -c /your/config multi 10 --nlaunches 0 --timeout 169200
+nodes: 20
+</code></pre></p>
+<p>Typically, setting N &lt;= 10 will give you a good N-times speedup with no problems. There are no guarantees, however, when N &gt; 10-20. Use N &gt; 50 at your own risk!</p>
+<h3 id="berkeley-research-computing">Berkeley Research Computing <a name="brc"></a></h3>
+<p>Berkeley Research Computing (BRC) hosts the Savio supercomputing cluster. Savio operates on a condo computing model, in which many PI's and researchers purchase nodes to add to the system. Nodes are accessible to all who have access to the system, though priority access will be given to contributors of the specific nodes. BRC provides 3 types of allocations:
+<em>Condo - Priority access for nodes contributed by the condo group.
+</em>Faculty Computing Allowance (FCA) - Limited computing time provided to each Faculty member using Savio.</p>
+<h4 id="setting-up-a-brc-account">Setting up a BRC account</h4>
+<p>To get an account on Savio, fill out the form linked below, making sure to select the appropriate allocation. Typically, most students and postdocs will be running on co_lsdi.
+http://research-it.berkeley.edu/services/high-performance-computing/getting-account
+After your account is made, you'll need to set up 2-factor authentication. We recommend using Google Authenticator, although any OTP manager will work.</p>
+<p>[TODO: Fill out this with specific 2-factor setup details]</p>
+<h4 id="logging-into-brc">Logging into BRC</h4>
+<p>To access your shiny new savio account, you'll want to SSH onto the system from a terminal.</p>
+<p> <pre><code class>ssh username@hpc.brc.berekeley.edu
+</code></pre></p>
+<p>You will be prompted to enter your passphrase. This will take you to your home directory. You may also find it useful to set up an alias for signing on to HPC resources. To do this, add the following line to your bash_profile:</p>
+<p> <pre><code class>alias savio=&quot;ssh username@hpc.brc.berekeley.edu&quot;
+</code></pre></p>
+<h4 id="running-on-brc">Running on BRC</h4>
+<p>Under the condo account co_lsdi, we have exclusive access to 28 KNL nodes. Additionally, we have the ability to run on other nodes at low priority mode.</p>
+<h5 id="accessing-software-binaries">Accessing Software binaries</h5>
+<p>Software within BRC is managed through modules. You can access precompiled, preinstalled software by loading the desired module.</p>
+<p> <pre><code class>module load &lt;module_name&gt;
+</code></pre></p>
+<p>To view a list of currently installed programs, use the following command:</p>
+<p> <pre><code class>module avail
+</code></pre></p>
+<p>To view the currently loaded modules use the command:</p>
+<p> <pre><code class>module list
+</code></pre></p>
+<p>Software modules can be removed by using either of the following two commands:</p>
+<p> <pre><code class>module unload &lt;module_name&gt;
+module purge
+</code></pre></p>
+<h6 id="accessing-in-house-software-packages">Accessing In-House software packages</h6>
+<p>The Persson Group maintains their own versions of popular codes such as VASP, GAUSSIAN, QCHEM and LAMMPS. To access these binaries, ensure that you have the proper licenses and permissions, then append the following line to the .bashrc file in your root directory:</p>
+<p> <pre><code class>export MODULEPATH=${MODULEPATH}:/global/home/groups/co_lsdi/sl7/modfiles
+</code></pre></p>
+<h5 id="using-persson-group-owned-knl-nodes">Using Persson Group Owned KNL nodes</h5>
+<p>To run on the KNL nodes, use the following job script, replacing <executable> with the desired job executable name. To run vasp after loading the proper module, use vasp_std, vasp_gam, or vasp_ncl.</p>
+<p> <pre><code class>#!bin/bash -l
+#SBATCH --nodes=1                 #Use 1 node
+#SBATCH --ntasks=64               #Use 64 tasks for the job
+#SBATCH --qos=lsdi_knl2_normal    #Set job to normal qos
+#SBATCH --time=01:00:00           #Set 1 hour time limit for job
+#SBATCH --partition=savio2_knl    #Submit to the KNL nodes owned by the Persson Group
+#SBATCH --account=co_lsdi         #Charge to co_lsdi accout
+#SBATCH --job-name=savio2_job     #Name for the job
+
+mpirun --bind-to core &lt;executable&gt;
+</code></pre></p>
+<h5 id="running-on-haswell-nodeson-low-priority">Running on Haswell Nodes(on Low Priority)</h5>
+<p>To run on Haswell nodes, use the following slurm submission script:</p>
+<p> <pre><code class>#!bin/bash -l
+#SBATCH --nodes=1                 #Use 1 node
+#SBATCH --ntasks_per_core=1       #Use 1 task per core on the node
+#SBATCH --qos=savio_lowprio       #Set job to low priority qos
+#SBATCH --time=01:00:00           #Set 1 hour time limit for job
+#SBATCH --partition=savio2        #Submit to the haswell nodes
+#SBATCH --account=co_lsdi         #Charge to co_lsdi accout
+#SBATCH --job-name=savio2_job     #Name for the job
+
+mpirun --bind-to core &lt;executable&gt;
+</code></pre></p>
+<h3 id="peregrine">Peregrine <a name="nrel"></a></h3>
+<p>NREL's supercomputer Peregrine is reserved for projects and jobs related to silicon-based Li-ion battery research.</p>
+<h4 id="getting-an-account-on-peregrine">Getting an account on Peregrine</h4>
+<p>To request a peregrine account, visit the following link.</p>
+<p>https://www.nrel.gov/hpc/user-accounts.html</p>
+<h3 id="additional-resources">Additional resources:</h3>
+<p>Other Persson group members and the NERSC website are both excellent resources for getting additional help. If that fails, you can reach out to the NERSC Operations staff:</p>
+<ul>
+<li>
+<p>1-800-666-3772 (or 1-510-486-8600)</p>
+</li>
+<li>
+<p>Computer Operations = menu option 1 (24/7)</p>
+</li>
+<li>
+<p>Account Support = menu option 2,  accounts@nersc.gov</p>
+</li>
+<li>
+<p>HPC Consulting = menu option 3, or consult@nersc.gov</p>
+</li>
+<li>
+<p>Online Help Desk = help.nersc.gov</p>
+</li>
+</ul>
+<hr />
+<p>Authors: Kara Fong, Eric Sivonxay, John Dagdelen</p>
+<p>Contact: karafong@lbl.gov</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

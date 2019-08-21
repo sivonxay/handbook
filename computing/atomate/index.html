@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Atomate Setup - Persson Group Handbook</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link href="../../css/code-tabs.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Persson Group Handbook</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../about/about/">General</a>
+</li>
+                                    
+<li >
+    <a href="../../about/group_policies/">Group Policies</a>
+</li>
+                                    
+<li >
+    <a href="../../about/group_jobs/">Group Jobs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../getting_started/newcomers/">Newcomers</a>
+</li>
+                                    
+<li >
+    <a href="../../getting_started/new_computer/">Purchasing a Computer</a>
+</li>
+                                    
+<li >
+    <a href="../../getting_started/purchasing/">Purchasing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Computing <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../computing/">General Info</a>
+</li>
+                                    
+<li >
+    <a href="../software/">Software</a>
+</li>
+                                    
+<li >
+    <a href="../hpc/">HPC</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Atomate Setup</a>
+</li>
+                                    
+<li >
+    <a href="../calculation_software/">Calculation Software</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../students/residency/">Establishing Residency</a>
+</li>
+                                    
+<li >
+    <a href="../../students/prelims/">Preparing for Prelims</a>
+</li>
+                                    
+<li >
+    <a href="../../students/qualifying/">Qualifying Exams</a>
+</li>
+                                </ul>
+                            </li>
+                            <li >
+                                <a href="../../postdocs/">Post-Docs</a>
+                            </li>
+                            <li >
+                                <a href="../../acknowlegements/">Acknowlegements</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../hpc/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../calculation_software/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#setup-an-environment">Setup an environment:</a></li>
+        <li class="main "><a href="#configure-fireworks">Configure Fireworks:</a></li>
+            <li><a href="#create-fireworks-configuration-files">Create Fireworks configuration files</a></li>
+            <li><a href="#create-fireworker-and-queue-launchers">Create Fireworker and Queue Launchers:</a></li>
+            <li><a href="#configure-bash-profile">Configure Bash profile:</a></li>
+            <li><a href="#setup-api-key-and-add-potcar-directory-to-pymatgen">Setup API key and Add POTCAR Directory to pymatgen</a></li>
+        <li class="main "><a href="#using-fireworks-and-atomate">Using Fireworks and Atomate:</a></li>
+            <li><a href="#initializing-fireworks-database">Initializing Fireworks Database:</a></li>
+            <li><a href="#using-atomate-to-create-preset-workflow">Using Atomate to create preset workflow</a></li>
+            <li><a href="#running-jobs">Running Jobs:</a></li>
+            <li><a href="#monitoring-database-fireworks">Monitoring Database/ Fireworks</a></li>
+        <li class="main "><a href="#viewing-database-and-outputs">Viewing Database and Outputs:</a></li>
+            <li><a href="#setup-connection-using-mongodb-credentials">Setup connection using mongodb credentials</a></li>
+            <li><a href="#querying-collections">Querying collections</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>This guide walks you through the steps for setting up Fireworks and Atomate on the HPC. This guide will generally cover installation on both NERSC and Lawrencium. Installation steps for a local machine or another super computer will differ, but follow similar steps.</p>
+<h1 id="setup-an-environment">Setup an environment:</h1>
+<p>Create the conda environment</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-0-0_NERSC-panel role=tab><label for=tab-group-0-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-0-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-0-0_NERSC-panel aria-labelledby=tab-group-0-0_NERSC-label><pre><code class=NERSC>module load python/3.6-anaconda-4.4
+conda create -n cms python=3.6
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-1_Savio class=code-tab data-lang=Savio aria-controls=tab-group-0-1_Savio-panel role=tab><label for=tab-group-0-1_Savio class=code-tab-label data-lang=Savio id=tab-group-0-1_Savio-label>Savio</label><div class=code-tabpanel role=tabpanel data-lang=Savio id=tab-group-0-1_Savio-panel aria-labelledby=tab-group-0-1_Savio-label><pre><code class=Savio>module load python/3.6
+conda create -n cms python=3.6
+</code></pre></div><input name=tab-group-0 type=radio id=tab-group-0-2_Lawrencium class=code-tab data-lang=Lawrencium aria-controls=tab-group-0-2_Lawrencium-panel role=tab><label for=tab-group-0-2_Lawrencium class=code-tab-label data-lang=Lawrencium id=tab-group-0-2_Lawrencium-label>Lawrencium</label><div class=code-tabpanel role=tabpanel data-lang=Lawrencium id=tab-group-0-2_Lawrencium-panel aria-labelledby=tab-group-0-2_Lawrencium-label><pre><code class=Lawrencium>module load python/3.6
+conda create -n cms python=3.6
+</code></pre></div></div>
+
+<p>Activate the environment and install the base libraries
+Note: cms=computational materials science, but feel free to pick your own name</p>
+<p> <pre><code class=bash>source activate cms
+conda install numpy scipy matplotlib pandas
+</code></pre></p>
+<p>to install atomate on the environment, use one of the following:</p>
+<p>If you are just using atomate and fireworks, with no plans to develop code/ workflows, use the following:</p>
+<p> <pre><code class=bash>pip install atomate
+</code></pre></p>
+<p>For developers:</p>
+<p> <pre><code class=bash>source activate cms
+cd ~/.conda/envs/cms
+mkdir code
+cd code
+git clone https://github.com/materialsproject/pymatgen.git
+git clone https://github.com/materialsproject/pymatgen-db.git
+git clone https://github.com/materialsproject/fireworks.git
+git clone https://github.com/materialsproject/custodian.git
+git clone https://github.com/hackingmaterials/atomate.git
+
+cd pymatgen
+python setup.py develop
+pip install -r requirements.txt
+cd ..
+cd pymatgen-db
+python setup.py develop
+pip install -r requirements.txt
+cd ..
+cd fireworks
+python setup.py develop
+pip install -r requirements.txt
+cd ..
+cd custodian
+python setup.py develop
+pip install -r requirements.txt
+cd ..
+cd atomate
+python setup.py develop
+pip install -r requirements.txt
+cd ..
+</code></pre></p>
+<h1 id="configure-fireworks">Configure Fireworks:</h1>
+<h2 id="create-fireworks-configuration-files">Create Fireworks configuration files</h2>
+<p>Make directory in environment’s root directory  (/envs/&lt;name&gt;/) called config</p>
+<p> <pre><code class=bash>cd ~/.conda/envs/cms
+mkdir config
+cd config
+</code></pre></p>
+<p>Make 3 files: FW_config.yaml, db.json, and my_launchpad.yaml with the following contents. Replace the teal highlighted text with details specific to your configuration. Note that you can view your <a href="https://my.nersc.gov/filebrowser.php">filesystem online</a>.</p>
+<h3 id="fireworks-configuration-fw_configyaml">Fireworks configuration (FW_config.yaml)</h3>
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-5-0_NERSC-panel role=tab><label for=tab-group-5-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-5-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-5-0_NERSC-panel aria-labelledby=tab-group-5-0_NERSC-label><pre><code class=NERSC>CONFIG_FILE_DIR: /global/homes/s/sivonxay/.conda/envs/cms/config
+QUEUE_UPDATE_INTERVAL: 5
+</code></pre></div><input name=tab-group-5 type=radio id=tab-group-5-1_Savio class=code-tab data-lang=Savio aria-controls=tab-group-5-1_Savio-panel role=tab><label for=tab-group-5-1_Savio class=code-tab-label data-lang=Savio id=tab-group-5-1_Savio-label>Savio</label><div class=code-tabpanel role=tabpanel data-lang=Savio id=tab-group-5-1_Savio-panel aria-labelledby=tab-group-5-1_Savio-label><pre><code class=Savio>CONFIG_FILE_DIR: /global/home/users/sivonxay/.conda/envs/cms/config
+QUEUE_UPDATE_INTERVAL: 5
+</code></pre></div><input name=tab-group-5 type=radio id=tab-group-5-2_Lawrencium class=code-tab data-lang=Lawrencium aria-controls=tab-group-5-2_Lawrencium-panel role=tab><label for=tab-group-5-2_Lawrencium class=code-tab-label data-lang=Lawrencium id=tab-group-5-2_Lawrencium-label>Lawrencium</label><div class=code-tabpanel role=tabpanel data-lang=Lawrencium id=tab-group-5-2_Lawrencium-panel aria-labelledby=tab-group-5-2_Lawrencium-label><pre><code class=Lawrencium>CONFIG_FILE_DIR: /global/home/users/sivonxay/.conda/envs/cms/config
+QUEUE_UPDATE_INTERVAL: 5
+</code></pre></div></div>
+
+<h3 id="database-file-dbjson">Database file (db.json)</h3>
+<p> <pre><code class>{
+    &quot;host&quot;: &quot;mongodb03.nersc.gov&quot;,
+    &quot;port&quot;: 27017,
+    &quot;database&quot;: &quot;fw_db_name&quot;,
+    &quot;collection&quot;: &quot;tasks&quot;,
+    &quot;admin_password&quot;: &quot;&lt;admin_password&gt;&quot;,
+    &quot;admin_user&quot;: &quot;&lt;admin_username&gt;&quot;,    
+    &quot;readonly_password&quot;: &quot;&lt;readonly_password&gt;&quot;,
+    &quot;readonly_user&quot;: &quot;&lt;readonly_username&gt;&quot;,
+    &quot;aliases_config&quot;: null
+}
+</code></pre></p>
+<h3 id="fireworks-launchpad-file-my_launchpadyaml">Fireworks LaunchPad file (my_launchpad.yaml)</h3>
+<p> <pre><code class>host: mongodb03.nersc.gov
+port: 27017
+name: 'fw_db_name'
+username: '&lt;admin_username&gt;'
+password: ‘&lt;admin_password&gt;’
+logdir: null
+Istrm_lvl: DEBUG
+user_indices: []
+wf_user_indices: []
+</code></pre></p>
+<h2 id="create-fireworker-and-queue-launchers">Create Fireworker and Queue Launchers:</h2>
+<h3 id="fireworker-file-my_fworkeryaml">Fireworker file (my_fworker.yaml)</h3>
+<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-8-0_NERSC-panel role=tab><label for=tab-group-8-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-8-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-8-0_NERSC-panel aria-labelledby=tab-group-8-0_NERSC-label><pre><code class=NERSC>name: nersc_fworker
+category: ''
+query: '{}'
+env:
+    db_file: /global/homes/s/sivonxay/.conda/envs/cms/config/db.json
+    vasp_cmd: 'srun -N 1 -n 64 -c 4 --cpu_bind=cores vasp_std'
+    gamma_vasp_cmd: 'srun -N 1 -n 64 -c 4 --cpu_bind=cores vasp_gam'
+    scratch_dir: /global/cscratch1/sd/sivonxay
+    incar_update:
+</code></pre></div><input name=tab-group-8 type=radio id=tab-group-8-1_Savio class=code-tab data-lang=Savio aria-controls=tab-group-8-1_Savio-panel role=tab><label for=tab-group-8-1_Savio class=code-tab-label data-lang=Savio id=tab-group-8-1_Savio-label>Savio</label><div class=code-tabpanel role=tabpanel data-lang=Savio id=tab-group-8-1_Savio-panel aria-labelledby=tab-group-8-1_Savio-label><pre><code class=Savio>name: savio_fworker
+category: ''
+query: '{}'
+env:
+    db_file: /global/home/users/sivonxay/.conda/envs/cms/config/db.json
+    vasp_cmd: 'mpirun --bind-to core vasp_std'
+    gamma_vasp_cmd: 'mpirun --bind-to core vasp_gam'
+    scratch_dir: /global/scratch/sivonxay/
+    incar_update:
+</code></pre></div><input name=tab-group-8 type=radio id=tab-group-8-2_Lawrencium class=code-tab data-lang=Lawrencium aria-controls=tab-group-8-2_Lawrencium-panel role=tab><label for=tab-group-8-2_Lawrencium class=code-tab-label data-lang=Lawrencium id=tab-group-8-2_Lawrencium-label>Lawrencium</label><div class=code-tabpanel role=tabpanel data-lang=Lawrencium id=tab-group-8-2_Lawrencium-panel aria-labelledby=tab-group-8-2_Lawrencium-label><pre><code class=Lawrencium>name: lrc_fworker
+category: ''
+query: '{}'
+env:
+    db_file: /global/home/users/sivonxay/.conda/envs/cms/config/db.json
+    vasp_cmd: 'mpirun --bind-to core vasp_std'
+    gamma_vasp_cmd: 'mpirun --bind-to core vasp_gam'
+    scratch_dir: /global/scratch/sivonxay/
+    incar_update:
+</code></pre></div></div>
+
+<h3 id="queue-adapter-my_qadapteryaml">Queue Adapter (my_qadapter.yaml):</h3>
+<div class=md-fenced-code-tabs id=tab-tab-group-9><input name=tab-group-9 type=radio id=tab-group-9-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-9-0_NERSC-panel role=tab><label for=tab-group-9-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-9-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-9-0_NERSC-panel aria-labelledby=tab-group-9-0_NERSC-label><pre><code class=NERSC>_fw_name: CommonAdapter
+_fw_q_type: SLURM
+rocket_launch: rlaunch -w /global/homes/s/sivonxay/.conda/envs/cms/config/my_fworker.yaml singleshot
+nodes: 1
+walltime: '24:00:00'
+account: matgen
+job_name: knl_launcher
+qos: regular
+constraint: 'knl'
+pre_rocket: |
+            source activate cms
+            module load vasp-tpc/5.4.4-knl
+            export OMP_PROC_BIND=true
+            export OMP_PLACES=threads
+            export OMP_NUM_THREADS=1
+</code></pre></div><input name=tab-group-9 type=radio id=tab-group-9-1_Savio class=code-tab data-lang=Savio aria-controls=tab-group-9-1_Savio-panel role=tab><label for=tab-group-9-1_Savio class=code-tab-label data-lang=Savio id=tab-group-9-1_Savio-label>Savio</label><div class=code-tabpanel role=tabpanel data-lang=Savio id=tab-group-9-1_Savio-panel aria-labelledby=tab-group-9-1_Savio-label><pre><code class=Savio>_fw_name: CommonAdapter
+_fw_q_type: SLURM
+rocket_launch: rlaunch -w /global/home/users/sivonxay/.conda/envs/cms/config/my_fworker.yaml singleshot
+nodes: 1
+walltime: '24:00:00'
+account: co_lsdi
+job_name: knl_launcher
+queue: savio2_knl
+qos: lsdi_knl2_normal
+ntasks: 64
+pre_rocket: |
+            source activate cms
+            module load vasp
+            export OMP_PROC_BIND=true
+            export OMP_PLACES=threads
+            export OMP_NUM_THREADS=1
+            post_rocket: null
+</code></pre></div><input name=tab-group-9 type=radio id=tab-group-9-2_Lawrencium class=code-tab data-lang=Lawrencium aria-controls=tab-group-9-2_Lawrencium-panel role=tab><label for=tab-group-9-2_Lawrencium class=code-tab-label data-lang=Lawrencium id=tab-group-9-2_Lawrencium-label>Lawrencium</label><div class=code-tabpanel role=tabpanel data-lang=Lawrencium id=tab-group-9-2_Lawrencium-panel aria-labelledby=tab-group-9-2_Lawrencium-label><pre><code class=Lawrencium></code></pre></div></div>
+
+<p>For more information on best practices for running VASP on multiple nodes (i.e. how to set vasp_cmd in my_fworker.yaml based on the number of nodes requested in my_qadapter) see the <a href="https://www.nersc.gov/users/training/events/vasp-user-hands-on-knl-training-june-18-2019/">NERSC vasp training</a></p>
+<h2 id="configure-bash-profile">Configure Bash profile:</h2>
+<p>Append the following lines to the .bashrc.ext file (which is located in your home directory, e.g. /global/homes/s/sivonxay)</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-10-0_NERSC-panel role=tab><label for=tab-group-10-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-10-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-10-0_NERSC-panel aria-labelledby=tab-group-10-0_NERSC-label><pre><code class=NERSC>module load python/3.6-anaconda-4.4
+export PMG_VASP_PSP_DIR=/project/projectdirs/matgen/POTCARs
+export FW_CONFIG_FILE='/global/homes/s/sivonxay/.conda/envs/cms/config/FW_config.yaml'
+alias cdconfig='cd ~/.conda/envs/cms/config'
+</code></pre></div><input name=tab-group-10 type=radio id=tab-group-10-1_Savio class=code-tab data-lang=Savio aria-controls=tab-group-10-1_Savio-panel role=tab><label for=tab-group-10-1_Savio class=code-tab-label data-lang=Savio id=tab-group-10-1_Savio-label>Savio</label><div class=code-tabpanel role=tabpanel data-lang=Savio id=tab-group-10-1_Savio-panel aria-labelledby=tab-group-10-1_Savio-label><pre><code class=Savio>module load python/3.6
+export PMG_VASP_PSP_DIR=/clusterfs/mp/software/POTCARs
+export FW_CONFIG_FILE='/global/home/users/sivonxay/.conda/envs/cms/config/FW_config.yaml'
+alias cdconfig='cd ~/.conda/envs/cms/config'
+</code></pre></div><input name=tab-group-10 type=radio id=tab-group-10-2_Lawrencium class=code-tab data-lang=Lawrencium aria-controls=tab-group-10-2_Lawrencium-panel role=tab><label for=tab-group-10-2_Lawrencium class=code-tab-label data-lang=Lawrencium id=tab-group-10-2_Lawrencium-label>Lawrencium</label><div class=code-tabpanel role=tabpanel data-lang=Lawrencium id=tab-group-10-2_Lawrencium-panel aria-labelledby=tab-group-10-2_Lawrencium-label><pre><code class=Lawrencium></code></pre></div></div>
+
+<p>Note the line alias cdconfig='cd ~/.conda/envs/cms/config' is optional but is recommended so you can more easily locate the directory with your configuration files stored by typing cdconfig into the command line.</p>
+<h2 id="setup-api-key-and-add-potcar-directory-to-pymatgen">Setup API key and Add POTCAR Directory to pymatgen</h2>
+<p>Go to materialsproject.org and get an API key. Make sure you are using the environment setup above to run these commands.</p>
+<p> <pre><code class=bash>pmg config --add PMG_MAPI_KEY &lt;USER_API_KEY&gt;
+pmg config --add PMG_VASP_PSP_DIR /project/projectdirs/matgen/POTCARs
+</code></pre></p>
+<p>Running these commands will create a .pmgrc.yaml file (if it doesn’t exist already) containing these configuration settings in your home directory</p>
+<h1 id="using-fireworks-and-atomate">Using Fireworks and Atomate:</h1>
+<h2 id="initializing-fireworks-database">Initializing Fireworks Database:</h2>
+<p>Use care when running this command. It will wipe all existing entries in your fireworks database in the fireworks, workflows, and launches collections.</p>
+<p> <pre><code class=bash>lpad reset
+</code></pre></p>
+<h2 id="using-atomate-to-create-preset-workflow">Using Atomate to create preset workflow</h2>
+<p>The following code blocks are python code that should be run in jupyter or from the terminal. Make sure you are using the environment setup above. The computer running the code should have access to mongodb03.nersc.gov; this can be disregarded when running directly on nersc or when connected to to the LBNL intranet. For computers outside of LBNL, a VPN will need to be used.</p>
+<p>Run the following python code by creating a file named “make_workflow.py”:</p>
+<p> <pre><code class=python>from pymatgen import MPRester
+from fireworks import LaunchPad
+from atomate.vasp.workflows.presets.core import wf_static
+from atomate.vasp import powerups
+
+mpr = MPRester()
+
+structure = mpr.get_structure_by_material_id(“mp-145”)
+wf = wf_static(structure)
+wf = powerups.add_common_powerups(wf, {&quot;scratch_dir&quot;:&quot;&gt;&gt;scratch_dir&lt;&lt;&quot;})
+
+lp = LaunchPad.auto_load()
+lp.add_wf(wf)
+</code></pre></p>
+<p>The previous python script added a static energy calculation for Hexagonal Lu to your job database.</p>
+<p> <pre><code class=bash>python “make_workflow.py
+</code></pre></p>
+<p>To check on the job, run the command:</p>
+<p> <pre><code class=bash>lpad get_fws -s READY
+</code></pre></p>
+<h2 id="running-jobs">Running Jobs:</h2>
+<p>We recommend using a tmux or screen when submitting jobs to preserve queue submission when the main ssh session is terminated. This allows one to keep the queue saturated with jobs. For example, for tmux:</p>
+<p> <pre><code class=bash>module load tmux
+tmux new -s background_launcher
+source active cms
+mkdir FireworksTest
+cd FireworksTest
+</code></pre></p>
+<p>To exit the tmux session, press the “control” and “b” keys together, followed by “d”</p>
+<p>To re-enter the tmux session:</p>
+<p> <pre><code class=bash>tmux attach -t background_launcher
+</code></pre></p>
+<p>For more tmux commands, see the <a href="https://tmuxcheatsheet.com/">tmux cheatsheet</a></p>
+<p>Use qlaunch command to reserve jobs with SLURM’s scheduler. Qlaunch has 3 modes; singleshot, rapidfire, and multi. Singleshot is used to launch one job, rapidfire is used to launch multiple jobs in quick succession, and multi creates one job with multiple fireworks runs. You’ll probably want to use rapidfire. Some useful flags to set are: -m to specify maximum # of jobs in queue at any given time and --nlaunches to specify how many fireworks to run.
+Here are some examples:</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-18><input name=tab-group-18 type=radio id=tab-group-18-0_example_1 checked=checked class=code-tab data-lang=example_1 aria-controls=tab-group-18-0_example_1-panel role=tab><label for=tab-group-18-0_example_1 class=code-tab-label data-lang=example_1 id=tab-group-18-0_example_1-label>Example_1</label><div class=code-tabpanel role=tabpanel data-lang=example_1 id=tab-group-18-0_example_1-panel aria-labelledby=tab-group-18-0_example_1-label><pre><code class=example_1>qlaunch singleshot
+</code></pre></div><input name=tab-group-18 type=radio id=tab-group-18-1_example_2 class=code-tab data-lang=example_2 aria-controls=tab-group-18-1_example_2-panel role=tab><label for=tab-group-18-1_example_2 class=code-tab-label data-lang=example_2 id=tab-group-18-1_example_2-label>Example_2</label><div class=code-tabpanel role=tabpanel data-lang=example_2 id=tab-group-18-1_example_2-panel aria-labelledby=tab-group-18-1_example_2-label><pre><code class=example_2>qlaunch rapidfire --nlaunches 10
+</code></pre></div><input name=tab-group-18 type=radio id=tab-group-18-2_example_3 class=code-tab data-lang=example_3 aria-controls=tab-group-18-2_example_3-panel role=tab><label for=tab-group-18-2_example_3 class=code-tab-label data-lang=example_3 id=tab-group-18-2_example_3-label>Example_3</label><div class=code-tabpanel role=tabpanel data-lang=example_3 id=tab-group-18-2_example_3-panel aria-labelledby=tab-group-18-2_example_3-label><pre><code class=example_3>qlaunch rapidfire --nlaunches infinite -m 50
+</code></pre></div><input name=tab-group-18 type=radio id=tab-group-18-3_example_4 class=code-tab data-lang=example_4 aria-controls=tab-group-18-3_example_4-panel role=tab><label for=tab-group-18-3_example_4 class=code-tab-label data-lang=example_4 id=tab-group-18-3_example_4-label>Example_4</label><div class=code-tabpanel role=tabpanel data-lang=example_4 id=tab-group-18-3_example_4-panel aria-labelledby=tab-group-18-3_example_4-label><pre><code class=example_4>qlaunch -fm rapidfire --nlaunches infinite -m 50
+</code></pre></div></div>
+
+<h2 id="monitoring-database-fireworks">Monitoring Database/ Fireworks</h2>
+<p>Status of running fireworks can be determined by using the command</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-19><input name=tab-group-19 type=radio id=tab-group-19-0_example_1 checked=checked class=code-tab data-lang=example_1 aria-controls=tab-group-19-0_example_1-panel role=tab><label for=tab-group-19-0_example_1 class=code-tab-label data-lang=example_1 id=tab-group-19-0_example_1-label>Example_1</label><div class=code-tabpanel role=tabpanel data-lang=example_1 id=tab-group-19-0_example_1-panel aria-labelledby=tab-group-19-0_example_1-label><pre><code class=example_1>lpad get_fws -s RUNNING
+</code></pre></div><input name=tab-group-19 type=radio id=tab-group-19-1_example_2 class=code-tab data-lang=example_2 aria-controls=tab-group-19-1_example_2-panel role=tab><label for=tab-group-19-1_example_2 class=code-tab-label data-lang=example_2 id=tab-group-19-1_example_2-label>Example_2</label><div class=code-tabpanel role=tabpanel data-lang=example_2 id=tab-group-19-1_example_2-panel aria-labelledby=tab-group-19-1_example_2-label><pre><code class=example_2>lpad get_fws -q '{&quot;state&quot;:&quot;RUNNING&quot;, &quot;fw_id&quot;:{&quot;$gte&quot;: 50}}'
+</code></pre></div></div>
+
+<p>Rerunning fizzled (Failed) fireworks</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-20><input name=tab-group-20 type=radio id=tab-group-20-0_example_1 checked=checked class=code-tab data-lang=example_1 aria-controls=tab-group-20-0_example_1-panel role=tab><label for=tab-group-20-0_example_1 class=code-tab-label data-lang=example_1 id=tab-group-20-0_example_1-label>Example_1</label><div class=code-tabpanel role=tabpanel data-lang=example_1 id=tab-group-20-0_example_1-panel aria-labelledby=tab-group-20-0_example_1-label><pre><code class=example_1>lpad rerun_fws -i &lt;fw_id&gt;
+</code></pre></div><input name=tab-group-20 type=radio id=tab-group-20-1_example_2 class=code-tab data-lang=example_2 aria-controls=tab-group-20-1_example_2-panel role=tab><label for=tab-group-20-1_example_2 class=code-tab-label data-lang=example_2 id=tab-group-20-1_example_2-label>Example_2</label><div class=code-tabpanel role=tabpanel data-lang=example_2 id=tab-group-20-1_example_2-panel aria-labelledby=tab-group-20-1_example_2-label><pre><code class=example_2>lpad rerun_fws -s FIZZLED
+</code></pre></div></div>
+
+<p>Alternatively, you can view your jobs in the GUI by downloading your my_launchpad.yaml file to your local machine.
+To do so:</p>
+<p> <pre><code class=bash>scp &lt;username&gt;@dtn01.nersc.gov:~/.conda/envs/cms/config/my_launchpad.yaml .
+</code></pre></p>
+<p>Then, run this command, locally, in the folder containing the my_launchpad.yaml file. This will bring up the web interface hosted on you local machine on port 5000 (127.0.0.1:5000).</p>
+<p> <pre><code class=bash>lpad webgui
+</code></pre></p>
+<p>Occasionally, jobs may hang and not complete. To check for hung jobs, use the command:</p>
+<p> <pre><code class=bash>lpad detect_lostruns
+</code></pre></p>
+<p>To rerun these jobs, add the --rerun flag to the command.</p>
+<p> <pre><code class=bash>lpad detect_lostruns --rerun
+</code></pre></p>
+<h1 id="viewing-database-and-outputs">Viewing Database and Outputs:</h1>
+<p>Download and install Robo 3T from the following <a href="https://robomongo.org/download">link</a></p>
+<h2 id="setup-connection-using-mongodb-credentials">Setup connection using mongodb credentials</h2>
+<p><img alt="" src="/resources/mongodb_1.png" />
+<img alt="" src="/resources/mongodb_2.png" /></p>
+<h2 id="querying-collections">Querying collections</h2>
+<hr />
+<p>Authors: Eric Sivonxay, Julian Self, Ann Rutt, and Oxana Andriuc</p>
+<p>Contact: esivonxay@lbl.gov and jself@lbl.gov</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
