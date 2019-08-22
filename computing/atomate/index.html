@@ -48,36 +48,36 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li >
-    <a href="../../about/about/">General</a>
-</li>
-                                    
-<li >
-    <a href="../../about/group_policies/">Group Policies</a>
-</li>
-                                    
-<li >
-    <a href="../../about/group_jobs/">Group Jobs</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../getting_started/newcomers/">Newcomers</a>
+    <a href="../../getting_started/before/">Before you Arrive</a>
 </li>
                                     
 <li >
-    <a href="../../getting_started/new_computer/">Purchasing a Computer</a>
+    <a href="../../getting_started/after/">After you Arrive</a>
 </li>
                                     
 <li >
-    <a href="../../getting_started/purchasing/">Purchasing</a>
+    <a href="../../getting_started/settling/">Getting Settled</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Group Policies <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../policies/general/">General</a>
+</li>
+                                    
+<li >
+    <a href="../../policies/purchasing/">Purchasing</a>
+</li>
+                                    
+<li >
+    <a href="../../policies/travel/">Travel</a>
 </li>
                                 </ul>
                             </li>
@@ -107,27 +107,25 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../students/residency/">Establishing Residency</a>
+    <a href="../../about/about/">General</a>
 </li>
                                     
 <li >
-    <a href="../../students/prelims/">Preparing for Prelims</a>
+    <a href="../../about/subgroup/">Subgroup Meetings</a>
 </li>
                                     
 <li >
-    <a href="../../students/qualifying/">Qualifying Exams</a>
+    <a href="../../about/group_jobs/">Group Jobs</a>
+</li>
+                                    
+<li >
+    <a href="../../acknowlegements/">Acknowlegements</a>
 </li>
                                 </ul>
-                            </li>
-                            <li >
-                                <a href="../../postdocs.md">Post-Docs</a>
-                            </li>
-                            <li >
-                                <a href="../../acknowlegements/">Acknowlegements</a>
                             </li>
                         </ul>
 
@@ -173,7 +171,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>This guide walks you through the steps for setting up Fireworks and Atomate on the HPC. This guide will generally cover installation on both NERSC and Lawrencium. Installation steps for a local machine or another super computer will differ, but follow similar steps.</p>
 <h1 id="setup-an-environment">Setup an environment:</h1>
 <p>Create the conda environment</p>
 <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-0-0_NERSC-panel role=tab><label for=tab-group-0-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-0-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-0-0_NERSC-panel aria-labelledby=tab-group-0-0_NERSC-label><pre><code class=NERSC>module load python/3.6-anaconda-4.4
@@ -232,7 +229,7 @@ cd ..
 mkdir config
 cd config
 </code></pre></p>
-<p>Make 3 files: FW_config.yaml, db.json, and my_launchpad.yaml with the following contents. Replace the teal highlighted text with details specific to your configuration. Note that you can view your <a href="https://my.nersc.gov/filebrowser.php">filesystem online</a>.</p>
+<p>Make 3 files: FW_config.yaml, db.json, and my_launchpad.yaml with the following contents. Replace the teal highlighted text with details specific to your configuration. Note that you can view your <a href="https://my.NERSC.gov/filebrowser.php">filesystem online</a>.</p>
 <h3 id="fireworks-configuration-fw_configyaml">Fireworks configuration (FW_config.yaml)</h3>
 <div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-5-0_NERSC-panel role=tab><label for=tab-group-5-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-5-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-5-0_NERSC-panel aria-labelledby=tab-group-5-0_NERSC-label><pre><code class=NERSC>CONFIG_FILE_DIR: /global/homes/s/sivonxay/.conda/envs/cms/config
 QUEUE_UPDATE_INTERVAL: 5
@@ -244,7 +241,7 @@ QUEUE_UPDATE_INTERVAL: 5
 
 <h3 id="database-file-dbjson">Database file (db.json)</h3>
 <p> <pre><code class>{
-    &quot;host&quot;: &quot;mongodb03.nersc.gov&quot;,
+    &quot;host&quot;: &quot;mongodb03.NERSC.gov&quot;,
     &quot;port&quot;: 27017,
     &quot;database&quot;: &quot;fw_db_name&quot;,
     &quot;collection&quot;: &quot;tasks&quot;,
@@ -256,7 +253,7 @@ QUEUE_UPDATE_INTERVAL: 5
 }
 </code></pre></p>
 <h3 id="fireworks-launchpad-file-my_launchpadyaml">Fireworks LaunchPad file (my_launchpad.yaml)</h3>
-<p> <pre><code class>host: mongodb03.nersc.gov
+<p> <pre><code class>host: mongodb03.NERSC.gov
 port: 27017
 name: 'fw_db_name'
 username: '&lt;admin_username&gt;'
@@ -268,7 +265,7 @@ wf_user_indices: []
 </code></pre></p>
 <h2 id="create-fireworker-and-queue-launchers">Create Fireworker and Queue Launchers:</h2>
 <h3 id="fireworker-file-my_fworkeryaml">Fireworker file (my_fworker.yaml)</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-8-0_NERSC-panel role=tab><label for=tab-group-8-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-8-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-8-0_NERSC-panel aria-labelledby=tab-group-8-0_NERSC-label><pre><code class=NERSC>name: nersc_fworker
+<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-8-0_NERSC-panel role=tab><label for=tab-group-8-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-8-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-8-0_NERSC-panel aria-labelledby=tab-group-8-0_NERSC-label><pre><code class=NERSC>name: NERSC_fworker
 category: ''
 query: '{}'
 env:
@@ -335,7 +332,7 @@ pre_rocket: |
 <p>Available queues, partitions, and qos can be found at the following links:</p>
 <ul>
 <li>
-<p><a href="https://docs.nersc.gov/jobs/policy/">NERSC</a></p>
+<p><a href="https://docs.NERSC.gov/jobs/policy/">NERSC</a></p>
 </li>
 <li>
 <p><a href="http://research-it.berkeley.edu/services/high-performance-computing/user-guide/savio-user-guide">Savio</a></p>
@@ -345,7 +342,7 @@ pre_rocket: |
 </li>
 </ul>
 <p>Note: specifying singleshot in the queue adapter will limit each reserved job to running only one firework (even if other fireworks are ready and could run with your remaining wall time). Can change to rapidfire but this may result in lost runs (fireworks that do not complete because they run out of wall time).</p>
-<p>For more information on best practices for running VASP on multiple nodes (i.e. how to set vasp_cmd in my_fworker.yaml based on the number of nodes requested in my_qadapter) see the <a href="https://www.nersc.gov/users/training/events/vasp-user-hands-on-knl-training-june-18-2019/">NERSC vasp training</a></p>
+<p>For more information on best practices for running VASP on multiple nodes (i.e. how to set vasp_cmd in my_fworker.yaml based on the number of nodes requested in my_qadapter) see the <a href="https://www.NERSC.gov/users/training/events/vasp-user-hands-on-knl-training-june-18-2019/">NERSC vasp training</a></p>
 <h2 id="configure-bash-profile">Configure Bash profile:</h2>
 <p>Append the following lines to the .bashrc.ext file (which is located in your home directory, e.g. /global/homes/s/sivonxay)</p>
 <div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_NERSC checked=checked class=code-tab data-lang=NERSC aria-controls=tab-group-10-0_NERSC-panel role=tab><label for=tab-group-10-0_NERSC class=code-tab-label data-lang=NERSC id=tab-group-10-0_NERSC-label>Nersc</label><div class=code-tabpanel role=tabpanel data-lang=NERSC id=tab-group-10-0_NERSC-panel aria-labelledby=tab-group-10-0_NERSC-label><pre><code class=NERSC>module load python/3.6-anaconda-4.4
@@ -374,7 +371,7 @@ pmg config --add PMG_VASP_PSP_DIR /clusterfs/cloudcuckoo/POTCARs
 <p> <pre><code class=bash>lpad reset
 </code></pre></p>
 <h2 id="using-atomate-to-create-preset-workflow">Using Atomate to create preset workflow</h2>
-<p>The following code blocks are python code that should be run in jupyter or from the terminal. Make sure you are using the environment setup above. The computer running the code should have access to mongodb03.nersc.gov; this can be disregarded when running directly on nersc or when connected to to the LBNL intranet. For computers outside of LBNL, a VPN will need to be used.</p>
+<p>The following code blocks are python code that should be run in jupyter or from the terminal. Make sure you are using the environment setup above. The computer running the code should have access to mongodb03.NERSC.gov; this can be disregarded when running directly on NERSC or when connected to to the LBNL intranet. For computers outside of LBNL, a VPN will need to be used.</p>
 <p>Run the following python code by creating a file named “make_workflow.py”:</p>
 <p> <pre><code class=python>from pymatgen import MPRester
 from fireworks import LaunchPad
@@ -430,7 +427,7 @@ Here are some examples:</p>
 
 <p>Alternatively, you can view your jobs in the GUI by downloading your my_launchpad.yaml file to your local machine.
 To do so:</p>
-<p> <pre><code class=bash>scp &lt;username&gt;@dtn01.nersc.gov:~/.conda/envs/cms/config/my_launchpad.yaml .
+<p> <pre><code class=bash>scp &lt;username&gt;@dtn01.NERSC.gov:~/.conda/envs/cms/config/my_launchpad.yaml .
 </code></pre></p>
 <p>Then, run this command, locally, in the folder containing the my_launchpad.yaml file. This will bring up the web interface hosted on you local machine on port 5000 (127.0.0.1:5000).</p>
 <p> <pre><code class=bash>lpad webgui

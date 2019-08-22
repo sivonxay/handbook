@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Software - Persson Group Handbook</title>
+        <title>Subgroup Meetings - Persson Group Handbook</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -81,45 +81,45 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Computing <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../computing/">General Info</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">Software</a>
+    <a href="../../computing/computing/">General Info</a>
 </li>
                                     
 <li >
-    <a href="../hpc/">HPC</a>
+    <a href="../../computing/software/">Software</a>
 </li>
                                     
 <li >
-    <a href="../atomate/">Atomate Setup</a>
+    <a href="../../computing/hpc/">HPC</a>
 </li>
                                     
 <li >
-    <a href="../calculation_software/">Calculation Software</a>
+    <a href="../../computing/atomate/">Atomate Setup</a>
+</li>
+                                    
+<li >
+    <a href="../../computing/calculation_software/">Calculation Software</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../about/about/">General</a>
+    <a href="../about/">General</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Subgroup Meetings</a>
 </li>
                                     
 <li >
-    <a href="../../about/subgroup/">Subgroup Meetings</a>
-</li>
-                                    
-<li >
-    <a href="../../about/group_jobs/">Group Jobs</a>
+    <a href="../group_jobs/">Group Jobs</a>
 </li>
                                     
 <li >
@@ -136,12 +136,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../computing/">
+                                <a rel="next" href="../about/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../hpc/">
+                                <a rel="prev" href="../group_jobs/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -153,72 +153,42 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#our-software-stack">Our software stack</a></li>
-        <li class="main "><a href="#we-also-heavily-use-the-materials-project-database">We also heavily use the Materials Project database.</a></li>
+        <li class="main active"><a href="#subgroups">Subgroups </a></li>
+            <li><a href="#materials-project">Materials Project:</a></li>
+            <li><a href="#spectroscopy">Spectroscopy:</a></li>
+            <li><a href="#materials-design-photocatalysts-magnetocalorics-piezoelectrics-tcos-etc">Materials Design (photocatalysts, magnetocalorics, piezoelectrics, TCOs, etc):</a></li>
+            <li><a href="#electrodes">Electrodes:</a></li>
+            <li><a href="#synthesis">Synthesis:</a></li>
+            <li><a href="#electrolytes-sei">Electrolytes-SEI:</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="our-software-stack">Our software stack</h2>
-<p>A brief summary of our software stack includes:</p>
-<ul>
-<li>
-<p><a href="https://github.com/materialsproject/pymatgen">pymatgen</a> / <a href="https://github.com/materialsproject/pymatgen-db">pymatgen-db</a> - for representing and analyzing crystal structures, as well as setting up/performing manual calculations</p>
-</li>
-<li>
-<p><a href="https://github.com/materialsproject/fireworks">FireWorks</a> - for executing and managing calculation workflows at supercomputing centers</p>
-</li>
-<li>
-<p><a href="https://github.com/materialsproject/custodian">custodian</a> - instead of directly running an executable like VASP, one can wrap the executable in custodian to detect and fix errors</p>
-</li>
-<li>
-<p><a href="https://github.com/hackingmaterials/atomate">atomate</a> - for quickly defining multiple types of materials science workflows</p>
-</li>
-<li>
-<p><a href="https://github.com/hackingmaterials/matminer">matminer</a> - for large data analysis and visualization</p>
-</li>
-</ul>
-<h2 id="we-also-heavily-use-the-materials-project-database">We also heavily use the Materials Project database.</h2>
-<p>Additional software used by many members of our group include:</p>
-<ul>
-<li>
-<p><a href="http://jp-minerals.org/vesta/en/">VESTA</a> -</p>
-</li>
-<li>
-<p><a href="https://www.ovito.org/">Ovito</a> -</p>
-</li>
-<li>
-<p><a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a> -</p>
-</li>
-<li>
-<p><a href="https://studio3t.com/download/">Studio 3T</a> -</p>
-</li>
-<li>
-<p><a href="https://www.jetbrains.com/pycharm/">PyCharm</a> -</p>
-</li>
-<li>
-<p><a href="https://www.iterm2.com/">iTerm2</a> -</p>
-</li>
-</ul>
-<hr />
-<p>To learn how to use the software stack, you can consult the documentation of the individual codebases as well as review the following resources:</p>
-<ul>
-<li>
-<p>The 2018 Materials Project workshop (note that MatMethods is now called atomate): <a href="https://github.com/materialsproject/workshop-2018">https://github.com/materialsproject/workshop-2018</a></p>
-</li>
-<li>
-<p>The 2014 Materials Virtual Lab presentations:
-<a href="https://materialsvirtuallab.org/software/">https://materialsvirtuallab.org/software/</a></p>
-</li>
-<li>
-<p>The Materials Project YouTube tutorials:
-<a href="https://www.youtube.com/user/MaterialsProject">https://www.youtube.com/user/MaterialsProject</a></p>
-</li>
-</ul>
-<p>If you have a specific question, sometimes the easiest solution is to post it to the Slack group and crowdsource the answer (or just ask Shyam).</p>
-<hr />
-<p>Authors: John Dagdelen, Eric Sivonxay</p>
-<p>Contact: jdagdelen@lbl.gov</p></div>
+<h2 id="subgroups">Subgroups <a name="sgs"></a></h2>
+<h4 id="materials-project">Materials Project:</h4>
+<blockquote>
+<p><strong>Donny Winston</strong>, Shyam Dwaraknath, Patrick Huck, John Dagdelen, David Mrdjenovich, Matthew Horton</p>
+</blockquote>
+<h4 id="spectroscopy">Spectroscopy:</h4>
+<blockquote>
+<p><strong>Shyam Dwaraknath</strong>, Handong Ling, Matthew McDermott</p>
+</blockquote>
+<h4 id="materials-design-photocatalysts-magnetocalorics-piezoelectrics-tcos-etc">Materials Design (photocatalysts, magnetocalorics, piezoelectrics, TCOs, etc):</h4>
+<blockquote>
+<p><strong>Joey Montoya</strong>, Shyam Dwaraknath, Rachel Woods-Robinson, Matthew Horton, Jordan Burns, Handong Ling</p>
+</blockquote>
+<h4 id="electrodes">Electrodes:</h4>
+<blockquote>
+<p><strong>Jimmy Shen</strong>, Eric Sivonxay, Jianli Cheng, Ann Rutt, Jordan Burns, Matthew Horton</p>
+</blockquote>
+<h4 id="synthesis">Synthesis:</h4>
+<blockquote>
+<p><strong>John Dagdelen</strong>, Rebecca Stern, David Mrdjenovich, Matthew McDermott, Matthew Horton</p>
+</blockquote>
+<h4 id="electrolytes-sei">Electrolytes-SEI:</h4>
+<blockquote>
+<p><strong>Trevor Seguin</strong>, Brandon Wood, Julian Self, Tingzheng Hou, Sam Blau, Kara Fong</p>
+</blockquote></div>
         </div>
 
         <footer class="col-md-12">
